@@ -1,7 +1,6 @@
 # Besant-technologies-project
 # Project on rock-paper-scissor game
 import random
-
 choices = ["rock", "paper", "scissors"]
 win_map = {"rock": "scissors", "scissors": "paper", "paper": "rock"}
 
@@ -33,16 +32,13 @@ def play():
     user_score = 0
     computer_score = 0
 
-    while True:
+ while True:
         rounds += 1
         print(f"\nRound {rounds}")
-
         user = get_user_choice()
         comp = get_computer_choice()
-
         print(f"You chose: {user}")
         print(f"Computer chose: {comp}")
-
         winner = decide_winner(user, comp)
         if winner == "draw":
             print("It's a draw!")
@@ -52,15 +48,12 @@ def play():
         else:
             print("Computer wins this round!")
             computer_score += 1
-
         print(f"Score → You: {user_score} | Computer: {computer_score}")
-
         play_again = input("\nPlay again? (yes/no): ").strip().lower()
         if play_again != "yes":
             print("\nGame Over!")
             break
-
-    print(f"Final Score → You: {user_score} | Computer: {computer_score}")
+        print(f"Final Score → You: {user_score} | Computer: {computer_score}")
     if user_score > computer_score:
         print(" You win the match!")
     elif user_score < computer_score:
